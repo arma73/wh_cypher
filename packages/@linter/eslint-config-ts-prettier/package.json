@@ -7,9 +7,26 @@
   "bugs": {
     "url": "https://github.com/arma73/wh_cypher/issues"
   },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:arma73/wh_cypher.git",
     "directory": "packages/@linter/eslint-config-ts-prettier"
+  },
+  "dependencies": {
+    "@amollo-lint/eslint-config-ts-prettier": "^0.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.3"
+  },
+  "peerDependencies": {
+    "eslint": "^8",
+    "prettier": "^2",
+    "typescript": "^5"
   }
 }
