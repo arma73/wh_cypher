@@ -41,6 +41,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@browsers/chrome@workspace:extension/@browsers/chrome":
+  version: 0.0.0-use.local
+  resolution: "@browsers/chrome@workspace:extension/@browsers/chrome"
+  languageName: unknown
+  linkType: soft
+
 "@commitlint/cli@npm:^17.5.1":
   version: 17.5.1
   resolution: "@commitlint/cli@npm:17.5.1"
@@ -500,12 +506,6 @@ __metadata:
   checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
-
-"chrome@workspace:extension/@browsers/chrome":
-  version: 0.0.0-use.local
-  resolution: "chrome@workspace:extension/@browsers/chrome"
-  languageName: unknown
-  linkType: soft
 
 "cliui@npm:^8.0.1":
   version: 8.0.1

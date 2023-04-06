@@ -1,5 +1,6 @@
 {
-  "name": "chrome",
+  "name": "@browsers/chrome",
+  "scopeCommitName": "ext:chrome",
   "version": "0.0.1",
   "sideEffect": false,
   "private": true,
