@@ -1,0 +1,6 @@
+{
+  "extends": "@linter/eslint-config-ts-prettier",
+  "parserOptions": {
+    "project": "tsconfig.json"
+  }
+}

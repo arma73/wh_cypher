@@ -31,7 +31,10 @@
     "@amollo-lint/commitlint-plugin-scope-ws": "^1.1.0",
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
+    "@linter/eslint-config-ts-prettier": "workspace:^",
+    "eslint": "^8.37.0",
     "husky": "^8.0.3",
+    "prettier": "^2.8.7",
     "typescript": "^5.0.3"
   },
   "packageManager": "yarn@3.1.1"
