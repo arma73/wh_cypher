@@ -1,5 +1,6 @@
 {
   "name": "@linter/eslint-config-ts-prettier",
+  "scopeCommitName": "lint:ctp",
   "version": "0.0.1",
   "sideEffect": false,
   "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@linter/eslint-config-ts-prettier#readme",
