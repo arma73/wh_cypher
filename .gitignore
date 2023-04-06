@@ -1,0 +1,12 @@
+# managers/dependecies
+node_modules
+.yarn/cache
+.yarn/install-state.gz
+.DS_Store
+
+# local env files
+.env
+
+# misc
+.DS_Store
+.vscode
