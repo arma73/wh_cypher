@@ -1,0 +1,14 @@
+{
+  "name": "@linter/eslint-config-ts-prettier",
+  "version": "0.0.1",
+  "sideEffect": false,
+  "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@linter/eslint-config-ts-prettier#readme",
+  "bugs": {
+    "url": "https://github.com/arma73/wh_cypher/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arma73/wh_cypher.git",
+    "directory": "packages/@linter/eslint-config-ts-prettier"
+  }
+}

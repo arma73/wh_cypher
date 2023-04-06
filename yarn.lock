@@ -4,6 +4,12 @@
 __metadata:
   version: 5
 
+"@linter/eslint-config-ts-prettier@workspace:packages/@linter/eslint-config-ts-prettier":
+  version: 0.0.0-use.local
+  resolution: "@linter/eslint-config-ts-prettier@workspace:packages/@linter/eslint-config-ts-prettier"
+  languageName: unknown
+  linkType: soft
+
 "chrome@workspace:extension/@browsers/chrome":
   version: 0.0.0-use.local
   resolution: "chrome@workspace:extension/@browsers/chrome"
