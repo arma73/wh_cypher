@@ -1,0 +1,21 @@
+{
+  "name": "wh-cypher",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/arma73/wh_cypher#readme",
+  "version": "0.0.1",
+  "description": "Google Chrome extension that renders a table that authorizes user and stores user secret in encrypted in the storage",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arma73/wh_cypher.git"
+  },
+  "author": "arma73",
+  "bugs": {
+    "url": "https://github.com/arma73/wh_cypher/issues"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8",
+    "yarn": ">=1.22"
+  }
+}
