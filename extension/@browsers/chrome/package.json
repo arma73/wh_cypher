@@ -12,5 +12,11 @@
     "type": "git",
     "url": "git@github.com:arma73/wh_cypher.git",
     "directory": "extension/@browsers/chrome"
+  },
+  "scripts": {
+    "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "typescript": "5.0.3"
   }
 }
