@@ -24,5 +24,14 @@
     "npm": ">=8",
     "yarn": ">=1.22"
   },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@amollo-lint/commitlint-plugin-scope-ws": "^1.1.0",
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3"
+  },
   "packageManager": "yarn@3.1.1"
 }
