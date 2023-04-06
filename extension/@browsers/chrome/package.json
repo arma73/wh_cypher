@@ -14,9 +14,18 @@
     "directory": "extension/@browsers/chrome"
   },
   "scripts": {
+    "_________________________ lint _________________________": "______",
+    "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
+    "fix:ts": "yarn lint:ts --fix",
+    "lint": "concurrently \"npm:lint:ts\" \"npm:tsc:check\"",
+    "fix": "yarn fix:ts",
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
+    "@linter/eslint-config-tsx-prettier": "workspace:^",
+    "concurrently": "^8.0.1",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
     "typescript": "5.0.3"
   }
 }
