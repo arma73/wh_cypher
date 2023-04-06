@@ -1,0 +1,15 @@
+{
+  "name": "chrome",
+  "version": "0.0.1",
+  "sideEffect": false,
+  "private": true,
+  "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@browsers/chrome#readme",
+  "bugs": {
+    "url": "https://github.com/arma73/wh_cypher/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arma73/wh_cypher.git",
+    "directory": "extension/@browsers/chrome"
+  }
+}

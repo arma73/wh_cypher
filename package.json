@@ -13,9 +13,15 @@
   "bugs": {
     "url": "https://github.com/arma73/wh_cypher/issues"
   },
+  "workspaces": {
+    "packages": [
+      "extension/@browsers/*"
+    ]
+  },
   "engines": {
     "node": ">=16",
     "npm": ">=8",
     "yarn": ">=1.22"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }

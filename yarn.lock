@@ -4,6 +4,12 @@
 __metadata:
   version: 5
 
+"chrome@workspace:extension/@browsers/chrome":
+  version: 0.0.0-use.local
+  resolution: "chrome@workspace:extension/@browsers/chrome"
+  languageName: unknown
+  linkType: soft
+
 "wh-cypher@workspace:.":
   version: 0.0.0-use.local
   resolution: "wh-cypher@workspace:."
