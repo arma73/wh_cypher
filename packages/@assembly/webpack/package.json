@@ -26,16 +26,14 @@
     "watch:cjs": "yarn build:cjs --watch",
     "watch": "concurrently yarn:watch:cjs yarn:watch:esm",
     "_________________________ lint _________________________": "______",
-    "lint:ts": "eslint lib/**/*.ts",
+    "lint:ts": "eslint {lib,cli}/**/*.ts",
     "fix:ts": "yarn lint:ts --fix",
     "lint": "concurrently yarn:lint:ts yarn:tsc:check",
     "fix": "yarn fix:ts",
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
-  "dependencies": {
-    "@amollo-lint/eslint-config-ts-prettier": "^0.1.2"
-  },
   "devDependencies": {
+    "@linter/eslint-config-ts-prettier": "workspace:^",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
     "prettier": "^2.8.7",
@@ -46,7 +44,7 @@
     "webpack": "^5"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
+    "**/*.{js,ts}": [
       "eslint"
     ]
   }
