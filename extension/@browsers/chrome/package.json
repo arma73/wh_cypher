@@ -14,6 +14,8 @@
     "directory": "extension/@browsers/chrome"
   },
   "scripts": {
+    "dev": "wext dev",
+    "build": "wext build",
     "_________________________ lint _________________________": "______",
     "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
     "fix:ts": "yarn lint:ts --fix",
@@ -22,6 +24,7 @@
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
+    "@assembly/webpack": "workspace:^",
     "@linter/eslint-config-tsx-prettier": "workspace:^",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
