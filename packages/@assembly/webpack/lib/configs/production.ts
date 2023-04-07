@@ -86,7 +86,7 @@ const conf: Configuration = {
             inject: true,
         }),
         new CopyWebpackPlugin({
-            patterns: [{ from: "static/*", to: "[name][ext]" }],
+            patterns: [{ from: "public/*", to: "[name][ext]" }],
         }),
     ],
 };
