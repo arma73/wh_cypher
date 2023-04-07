@@ -41,7 +41,7 @@
     "**/*.{js,jsx,ts,tsx}": [
       "eslint"
     ],
-    "**/*.json": [
+    "**/!(*tsconfig).json": [
       "prettier --write"
     ]
   }
