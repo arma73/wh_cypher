@@ -14,8 +14,11 @@
     "directory": "extension/@browsers/chrome"
   },
   "scripts": {
+    "clean": "rimraf ./src/styles",
     "dev": "wext dev",
-    "build": "wext build",
+    "build:css": "postcss assets/styles/**/*.css --base assets/styles --dir ./src/styles",
+    "build:prod": "wext build",
+    "build": "run-s clean build:css build:prod",
     "_________________________ lint _________________________": "______",
     "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
     "fix:ts": "yarn lint:ts --fix",
@@ -29,12 +32,18 @@
   },
   "devDependencies": {
     "@assembly/webpack": "workspace:^",
+    "@config/postcss": "workspace:^",
+    "@config/tailwind": "workspace:^",
     "@linter/eslint-config-tsx-prettier": "workspace:^",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
     "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
     "typescript": "5.0.3"
   },
   "lint-staged": {
