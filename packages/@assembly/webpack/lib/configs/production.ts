@@ -1,12 +1,14 @@
-import TSConfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { merge } from "webpack-merge";
+import { commonConf } from "./common";
 import { WSExtPaths, WSPaths } from "../paths";
 
 import type { Configuration } from "webpack";
 
-export const prodConf: Configuration = {
+const conf: Configuration = {
     mode: "production",
-    name: "extension",
-    target: "web",
     devtool: false,
     entry: {
         bg: WSExtPaths.BG_SCRIPT,
@@ -33,16 +35,60 @@ export const prodConf: Configuration = {
                 "exclude": /node_modules/,
                 "use": "babel-loader",
             },
+            {
+                "test": /\.(ttf|eot|woff|otf|woff2)(\?\S*)?$/,
+                "type": "asset/resource",
+                "generator": {
+                    "filename": "assets/[hash][ext][query]",
+                },
+            },
+            {
+                "test": /\.(jpg|jpeg|png|ico)$/i,
+                "type": "asset/resource",
+            },
+            {
+                "test": /\.svg$/i,
+                "type": "asset/resource",
+                "exclude": [WSPaths.SVGR_ICONS],
+                "generator": {
+                    "filename": "assets/[name].[hash][ext][query]",
+                },
+            },
+            {
+                "test": /\.svg$/i,
+                "use": ["@svgr/webpack"],
+                "include": [WSPaths.SVGR_ICONS],
+            },
+            {
+                "test": /\.css$/,
+                "use": [
+                    {
+                        "loader": MiniCssExtractPlugin.loader,
+                        "options": {
+                            "esModule": true,
+                        },
+                    },
+                    "css-loader",
+                    "postcss-loader",
+                ],
+                "sideEffects": true,
+            },
         ],
     },
-    resolve: {
-        mainFiles: ["index"],
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
-        plugins: [
-            new TSConfigPathsPlugin({
-                configFile: "tsconfig.json",
-                baseUrl: WSPaths.ROOT,
-            }),
-        ],
-    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash:8].css",
+        }),
+        new HtmlWebpackPlugin({
+            template: WSExtPaths.POPUP_MARKUP,
+            chunks: ["popup"],
+            filename: "popup.html",
+            inject: true,
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{ from: "static/*", to: "[name][ext]" }],
+        }),
+    ],
 };
+
+export const prodConf = merge(commonConf, conf);
