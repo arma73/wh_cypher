@@ -16,7 +16,8 @@
   "workspaces": {
     "packages": [
       "extension/@browsers/*",
-      "packages/@linter/*"
+      "packages/@linter/*",
+      "packages/@assembly/*"
     ]
   },
   "engines": {
