@@ -114,6 +114,7 @@ __metadata:
   resolution: "@assembly/webpack@workspace:packages/@assembly/webpack"
   dependencies:
     "@linter/eslint-config-ts-prettier": "workspace:^"
+    "@shared/auxiliaries": "workspace:^"
     commander: ^10.0.0
     concurrently: ^8.0.1
     eslint: ^8.37.0
@@ -567,7 +568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shared/auxiliaries@workspace:packages/@shared/auxiliaries":
+"@shared/auxiliaries@workspace:^, @shared/auxiliaries@workspace:packages/@shared/auxiliaries":
   version: 0.0.0-use.local
   resolution: "@shared/auxiliaries@workspace:packages/@shared/auxiliaries"
   dependencies:

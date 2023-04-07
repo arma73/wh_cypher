@@ -32,6 +32,11 @@
     "fix": "yarn fix:ts",
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
+  "dependencies": {
+    "@shared/auxiliaries": "workspace:^",
+    "commander": "^10.0.0",
+    "webpack": "^5.78.0"
+  },
   "devDependencies": {
     "@linter/eslint-config-ts-prettier": "workspace:^",
     "concurrently": "^8.0.1",
@@ -39,9 +44,6 @@
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "typescript": "^5.0.3"
-  },
-  "peerDependencies": {
-    "webpack": "^5"
   },
   "lint-staged": {
     "**/*.{js,ts}": [
