@@ -17,7 +17,8 @@
     "packages": [
       "extension/@browsers/*",
       "packages/@linter/*",
-      "packages/@assembly/*"
+      "packages/@assembly/*",
+      "packages/@shared/*"
     ]
   },
   "engines": {
