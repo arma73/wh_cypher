@@ -23,9 +23,15 @@
     "fix": "yarn fix:ts",
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "@assembly/webpack": "workspace:^",
     "@linter/eslint-config-tsx-prettier": "workspace:^",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
     "prettier": "^2.8.7",
