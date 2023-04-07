@@ -18,6 +18,7 @@
       "extension/@browsers/*",
       "packages/@linter/*",
       "packages/@assembly/*",
+      "packages/@config/*",
       "packages/@shared/*"
     ]
   },
