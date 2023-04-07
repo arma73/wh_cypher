@@ -1,10 +1,9 @@
 import webpack from "webpack";
 import { Log } from "@shared/auxiliaries";
+import { prodConf } from "../configs/production";
 
-import type { Configuration } from "webpack";
-
-export const setupBuildCompiler = (config: Configuration) => {
-    const compiler = webpack(config);
+export const setupBuildCompiler = () => {
+    const compiler = webpack(prodConf);
 
     compiler.run((error, stats): null | void => {
         if (error) {

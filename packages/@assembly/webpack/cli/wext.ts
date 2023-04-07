@@ -1,20 +1,8 @@
 #!/usr/bin/env node
 
-import { resolve } from "path";
 import { program } from "commander";
 import { Log } from "@shared/auxiliaries";
 import { setupBuildCompiler } from "../lib/executes";
-
-import type { Configuration } from "webpack";
-
-const minConf: Configuration = {
-    mode: "production",
-    entry: "./src/index.js",
-    output: {
-        path: resolve(process.cwd(), "build"),
-        filename: "main.js",
-    },
-};
 
 const validOptions = ["build", "dev"];
 
@@ -26,7 +14,7 @@ const spawnScript = () => {
         .action(() => {
             // Code to run when the "build" command is used
             Log.echo("Building the project");
-            setupBuildCompiler(minConf);
+            setupBuildCompiler();
         });
 
     // Define the "dev" command
