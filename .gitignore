@@ -14,3 +14,7 @@ node_modules
 .DS_Store
 .vscode
 .turbo
+
+# buildes
+dist
+build
