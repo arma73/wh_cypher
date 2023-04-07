@@ -15,7 +15,13 @@
     "noEmit": false,                                  /* Disable emitting files from a compilation. */
     "jsx": "react-jsx",                               /* Specify what JSX code is generated. */
     "incremental": true,                              /* Enable incremental compilation */
-    "isolatedModules": true                           /* Ensure that each file can be safely transpiled without relying on other imports. */
+    "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
+    "paths": {
+      "svgr/*": ["./assets/svgr/*"],
+      "styles/*": ["./src/styles/*"],
+      "fonts/*": ["./assets/fonts/*"],
+      "images/*": ["./assets/images/*"],
+    }                                                 /* Specify a set of entries that re-map imports to additional lookup locations. */
   },
   "include": [
     "**/*.d.ts",
