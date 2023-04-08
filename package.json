@@ -29,6 +29,7 @@
   },
   "scripts": {
     "lint": "turbo run lint",
+    "build": "turbo run build",
     "prepare": "husky install"
   },
   "devDependencies": {
