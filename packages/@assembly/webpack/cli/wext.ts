@@ -2,7 +2,7 @@
 
 import { program } from "commander";
 import { Log } from "@shared/auxiliaries";
-import { setupBuildCompiler } from "../lib/executes";
+import { setupBuildCompiler, devServerRunner } from "../lib/executes";
 
 const validOptions = ["build", "dev"];
 
@@ -21,9 +21,10 @@ const spawnScript = () => {
     program
         .command("dev")
         .description("Start the development server")
-        .action(() => {
+        .action(async () => {
             // Code to run when the "dev" command is used
             Log.echo("Starting the development server");
+            await devServerRunner();
         });
 
     program.parse(process.argv);
