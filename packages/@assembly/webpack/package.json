@@ -1,0 +1,69 @@
+{
+  "name": "@assembly/webpack",
+  "scopeCommitName": "assy:webp",
+  "version": "1.0.0",
+  "sideEffect": false,
+  "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@assembly/webpack#readme",
+  "bugs": {
+    "url": "https://github.com/arma73/wh_cypher/issues"
+  },
+  "bin": {
+    "wext": "./dist/cjs/cli/wext.js"
+  },
+  "main": "./dist/cjs/lib/index.js",
+  "module": "./dist/esm/lib/index.js",
+  "types": "./dist/@types/lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arma73/wh_cypher.git",
+    "directory": "packages/@assembly/webpack"
+  },
+  "scripts": {
+    "build:esm": "tsc --module es6 --outdir dist/esm",
+    "build:cjs": "tsc --module commonjs --outdir dist/cjs",
+    "build": "rimraf dist && concurrently yarn:build:cjs yarn:build:esm",
+    "watch:esm": "yarn build:esm --watch",
+    "watch:cjs": "yarn build:cjs --watch",
+    "watch": "concurrently yarn:watch:cjs yarn:watch:esm",
+    "_________________________ lint _________________________": "______",
+    "lint:ts": "eslint {lib,cli}/**/*.ts",
+    "fix:ts": "yarn lint:ts --fix",
+    "lint": "concurrently yarn:lint:ts yarn:tsc:check",
+    "fix": "yarn fix:ts",
+    "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+    "@shared/auxiliaries": "workspace:^0.1.0",
+    "@svgr/webpack": "^7.0.0",
+    "babel-loader": "^9.1.2",
+    "commander": "^10.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.2.4",
+    "react-refresh": "^0.14.0",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "webpack": "^5.78.0",
+    "webpack-dev-server": "^4.13.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "@linter/eslint-config-ts-prettier": "workspace:^1.0.0",
+    "concurrently": "^8.0.1",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "typescript": "^5.0.3"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "eslint"
+    ]
+  }
+}

@@ -2,31 +2,16 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",                                   /* Specify the base directory to resolve non-relative module names. */
-    "outDir": "build",                                /* Specify an output folder for all emitted files. */
+    "outDir": "dist",                                 /* Specify an output folder for all emitted files. */
+    "module": "CommonJS",                             /* Specify what module code is generated. */
     "declaration": false,                             /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],                                                /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
     "skipLibCheck": true,                             /* Skip type checking all .d.ts files. */
     "forceConsistentCasingInFileNames": true,         /* Ensure that casing is correct in imports. */
-    "noEmit": false,                                  /* Disable emitting files from a compilation. */
-    "jsx": "react-jsx",                               /* Specify what JSX code is generated. */
     "incremental": true,                              /* Enable incremental compilation */
     "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
-    "paths": {
-      "svgr/*": ["./assets/svgr/*"],
-      "styles/*": ["./src/styles/*"],
-      "fonts/*": ["./assets/fonts/*"],
-      "images/*": ["./assets/images/*"],
-    }                                                 /* Specify a set of entries that re-map imports to additional lookup locations. */
   },
   "include": [
-    "**/*.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js"
+    "*.ts"
   ]
 }

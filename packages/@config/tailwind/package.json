@@ -1,0 +1,41 @@
+{
+  "name": "@config/tailwind",
+  "scopeCommitName": "cfg:tail",
+  "version": "1.0.0",
+  "sideEffect": false,
+  "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@config/tailwind#readme",
+  "bugs": {
+    "url": "https://github.com/arma73/wh_cypher/issues"
+  },
+  "main": "./dist/tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arma73/wh_cypher.git",
+    "directory": "packages/@config/tailwind"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "watch": "tsc --watch",
+    "_________________________ lint _________________________": "______",
+    "lint:ts": "eslint **/*.ts",
+    "lint": "concurrently yarn:lint:ts yarn:tsc:check",
+    "fix": "yarn lint:ts --fix",
+    "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.3.1"
+  },
+  "devDependencies": {
+    "@linter/eslint-config-ts-prettier": "workspace:^1.0.0",
+    "concurrently": "^8.0.1",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "typescript": "^5.0.3"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "eslint"
+    ]
+  }
+}

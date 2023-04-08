@@ -1,7 +1,7 @@
 {
   "name": "@browsers/chrome",
   "scopeCommitName": "ext:chrome",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "sideEffect": false,
   "private": true,
   "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@browsers/chrome#readme",
@@ -14,6 +14,11 @@
     "directory": "extension/@browsers/chrome"
   },
   "scripts": {
+    "clean": "rimraf ./src/styles",
+    "dev": "rimraf dev && pm2-dev ./bootstrap/pm2.config.js",
+    "build:css": "postcss assets/styles/**/*.css --base assets/styles --dir ./src/styles",
+    "build:prod": "wext build",
+    "build": "run-s clean build:css build:prod",
     "_________________________ lint _________________________": "______",
     "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
     "fix:ts": "yarn lint:ts --fix",
@@ -21,18 +26,34 @@
     "fix": "yarn fix:ts",
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
+  "dependencies": {
+    "@shared/ui": "workspace:^0.1.0",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
-    "@linter/eslint-config-tsx-prettier": "workspace:^",
+    "@assembly/webpack": "workspace:^1.0.0",
+    "@config/postcss": "workspace:^1.0.0",
+    "@config/tailwind": "workspace:^1.0.0",
+    "@linter/eslint-config-tsx-prettier": "workspace:^1.0.0",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
+    "npm-run-all": "^4.1.5",
+    "pm2": "^5.3.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
     "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
     "typescript": "5.0.3"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint"
     ],
-    "**/*.json": [
+    "**/!(*tsconfig).json": [
       "prettier --write"
     ]
   }

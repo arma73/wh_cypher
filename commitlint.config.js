@@ -15,9 +15,7 @@ const typeSubjects = [
 
 module.exports = {
     "extends": "@commitlint/config-conventional",
-    "plugins": [
-        "@amollo-lint/commitlint-plugin-scope-ws",
-    ],
+    "plugins": ["@amollo-lint/commitlint-plugin-scope-ws"],
     "rules": {
         "body-max-line-length": [1, "always", 100],
         "header-max-length": [0, "always", 72],
