@@ -3,7 +3,6 @@
   "private": true,
   "license": "MIT",
   "homepage": "https://github.com/arma73/wh_cypher#readme",
-  "version": "0.0.1",
   "description": "Google Chrome extension that renders a table that authorizes user and stores user secret in encrypted in the storage",
   "repository": {
     "type": "git",
