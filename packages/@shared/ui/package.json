@@ -1,0 +1,50 @@
+{
+  "name": "@shared/ui",
+  "scopeCommitName": "sd:ui",
+  "version": "0.0.1",
+  "sideEffect": false,
+  "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@shared/ui#readme",
+  "bugs": {
+    "url": "https://github.com/arma73/wh_cypher/issues"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/@types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arma73/wh_cypher.git",
+    "directory": "packages/@shared/ui"
+  },
+  "scripts": {
+    "build:esm": "tsc --module es6 --outdir dist/esm",
+    "build:cjs": "tsc --module commonjs --outdir dist/cjs",
+    "build": "rimraf dist && concurrently yarn:build:cjs yarn:build:esm",
+    "watch:esm": "yarn build:esm --watch",
+    "watch:cjs": "yarn build:cjs --watch",
+    "watch": "concurrently yarn:watch:cjs yarn:watch:esm",
+    "_________________________ lint _________________________": "______",
+    "lint:ts": "eslint lib/**/*.{js,ts,jsx,tsx}",
+    "fix:ts": "yarn lint:ts --fix",
+    "lint": "concurrently yarn:lint:ts yarn:tsc:check",
+    "fix": "yarn fix:ts",
+    "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@linter/eslint-config-tsx-prettier": "workspace:^",
+    "concurrently": "^8.0.1",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "typescript": "^5.0.3"
+  },
+  "peerDependencies": {
+    "clsx": "^1",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "eslint"
+    ]
+  }
+}
