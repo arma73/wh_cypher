@@ -1,7 +1,7 @@
 {
   "name": "@assembly/webpack",
   "scopeCommitName": "assy:webp",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "sideEffect": false,
   "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@assembly/webpack#readme",
   "bugs": {
@@ -35,7 +35,7 @@
   "dependencies": {
     "@babel/core": "^7.21.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "@shared/auxiliaries": "workspace:^",
+    "@shared/auxiliaries": "workspace:^0.1.0",
     "@svgr/webpack": "^7.0.0",
     "babel-loader": "^9.1.2",
     "commander": "^10.0.0",
@@ -54,7 +54,7 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "@linter/eslint-config-ts-prettier": "workspace:^",
+    "@linter/eslint-config-ts-prettier": "workspace:^1.0.0",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
     "prettier": "^2.8.7",
