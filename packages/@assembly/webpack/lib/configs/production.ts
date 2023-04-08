@@ -1,22 +1,15 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import CopyWebpackPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { merge } from "webpack-merge";
+import { WSPaths } from "../paths";
 import { commonConf } from "./common";
-import { WSExtPaths, WSPaths } from "../paths";
 
 import type { Configuration } from "webpack";
 
 const conf: Configuration = {
     mode: "production",
     devtool: false,
-    entry: {
-        bg: WSExtPaths.BG_SCRIPT,
-        content: WSExtPaths.CONTENT_SCRIPT,
-        popup: WSExtPaths.POPUP,
-    },
     output: {
-        path: WSPaths.OUTPUT,
+        path: WSPaths.OUTPUT_BUILD,
         filename: "[name].js",
         publicPath: "/",
         chunkFilename: "[name].[chunkhash:8].chunk.js",
@@ -25,40 +18,6 @@ const conf: Configuration = {
     },
     module: {
         rules: [
-            {
-                "test": /\.(ts)x?$/,
-                "use": "ts-loader",
-                "exclude": /node_modules/,
-            },
-            {
-                "test": /\.(js)x?$/,
-                "exclude": /node_modules/,
-                "use": "babel-loader",
-            },
-            {
-                "test": /\.(ttf|eot|woff|otf|woff2)(\?\S*)?$/,
-                "type": "asset/resource",
-                "generator": {
-                    "filename": "assets/[hash][ext][query]",
-                },
-            },
-            {
-                "test": /\.(jpg|jpeg|png|ico)$/i,
-                "type": "asset/resource",
-            },
-            {
-                "test": /\.svg$/i,
-                "type": "asset/resource",
-                "exclude": [WSPaths.SVGR_ICONS],
-                "generator": {
-                    "filename": "assets/[name].[hash][ext][query]",
-                },
-            },
-            {
-                "test": /\.svg$/i,
-                "use": ["@svgr/webpack"],
-                "include": [WSPaths.SVGR_ICONS],
-            },
             {
                 "test": /\.css$/,
                 "use": [
@@ -78,15 +37,6 @@ const conf: Configuration = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash:8].css",
-        }),
-        new HtmlWebpackPlugin({
-            template: WSExtPaths.POPUP_MARKUP,
-            chunks: ["popup"],
-            filename: "popup.html",
-            inject: true,
-        }),
-        new CopyWebpackPlugin({
-            patterns: [{ from: "public/*", to: "[name][ext]" }],
         }),
     ],
 };

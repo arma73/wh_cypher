@@ -19,6 +19,7 @@ export namespace WSPaths {
      * The absolute path to the building directory.
      * @constant
      */
+    export const OUTPUT_BUILD = join(ROOT, "build");
     export const OUTPUT = join(ROOT, "build");
     /**
      * The absolute path to the app directory.
