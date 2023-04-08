@@ -15,7 +15,7 @@
   },
   "scripts": {
     "clean": "rimraf ./src/styles",
-    "dev": "wext dev",
+    "dev": "rimraf dev && pm2-dev ./bootstrap/pm2.config.js",
     "build:css": "postcss assets/styles/**/*.css --base assets/styles --dir ./src/styles",
     "build:prod": "wext build",
     "build": "run-s clean build:css build:prod",
@@ -27,6 +27,8 @@
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "@shared/ui": "workspace:^",
+    "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -40,6 +42,7 @@
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
     "npm-run-all": "^4.1.5",
+    "pm2": "^5.3.0",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "prettier": "^2.8.7",
