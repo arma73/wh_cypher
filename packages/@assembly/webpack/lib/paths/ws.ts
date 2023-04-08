@@ -20,7 +20,11 @@ export namespace WSPaths {
      * @constant
      */
     export const OUTPUT_BUILD = join(ROOT, "build");
-    export const OUTPUT = join(ROOT, "build");
+    /**
+     * The absolute path to the build directory in development mode.
+     * @constant
+     */
+    export const OUTPUT_DEV = join(ROOT, "dev");
     /**
      * The absolute path to the app directory.
      * @constant
