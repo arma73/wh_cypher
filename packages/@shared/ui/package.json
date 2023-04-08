@@ -1,7 +1,7 @@
 {
   "name": "@shared/ui",
   "scopeCommitName": "sd:ui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "sideEffect": false,
   "homepage": "https://github.com/arma73/wh_cypher/tree/main/packages/@shared/ui#readme",
   "bugs": {
@@ -30,7 +30,7 @@
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
-    "@linter/eslint-config-tsx-prettier": "workspace:^",
+    "@linter/eslint-config-tsx-prettier": "workspace:^1.0.0",
     "concurrently": "^8.0.1",
     "eslint": "^8.37.0",
     "prettier": "^2.8.7",
