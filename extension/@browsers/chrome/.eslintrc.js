@@ -4,4 +4,7 @@ module.exports = {
         project: "tsconfig.json",
         tsconfigRootDir: __dirname,
     },
+    globals: {
+        chrome: "readonly",
+    },
 };
