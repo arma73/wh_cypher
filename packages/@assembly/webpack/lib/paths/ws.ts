@@ -11,6 +11,11 @@ export namespace WSPaths {
      */
     export const ROOT = process.cwd();
     /**
+     * The absolute path to the environment variables.
+     * @constant
+     */
+    export const ROOT_ENV = join(ROOT, ".env");
+    /**
      * The absolute path to the source directory.
      * @constant
      */

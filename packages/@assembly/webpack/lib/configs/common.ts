@@ -2,6 +2,7 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import TSConfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import env from "../env";
 import { WSPaths, WSExtPaths } from "../paths";
 
 import type { Configuration } from "webpack";
@@ -64,6 +65,9 @@ export const commonConf: Configuration = {
     },
     plugins: [
         new webpack.ProgressPlugin(),
+        new webpack.DefinePlugin({
+            "SECRET_KEY": JSON.stringify(env.SECRET_KEY),
+        }),
         new HtmlWebpackPlugin({
             template: WSExtPaths.POPUP_MARKUP,
             chunks: ["popup"],
