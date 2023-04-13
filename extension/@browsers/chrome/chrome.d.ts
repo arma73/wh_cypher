@@ -8,3 +8,4 @@ declare module "svgr/*.svg" {
 }
 
 declare const SECRET_KEY: string;
+declare const EXT_WINDOW_HEIGHT: number;
