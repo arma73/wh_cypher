@@ -6,3 +6,5 @@ declare module "svgr/*.svg" {
 
     export default SVG;
 }
+
+declare const SECRET_KEY: string;

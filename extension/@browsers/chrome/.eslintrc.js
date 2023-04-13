@@ -6,5 +6,6 @@ module.exports = {
     },
     globals: {
         chrome: "readonly",
+        SECRET_KEY: "readonly",
     },
 };
