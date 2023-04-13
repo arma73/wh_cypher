@@ -128,14 +128,12 @@ __metadata:
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
     "@shared/auxiliaries": "workspace:^0.1.0"
     "@svgr/webpack": ^7.0.0
-    "@types/dotenv-webpack": ^7.0.3
     babel-loader: ^9.1.2
     commander: ^10.0.0
     concurrently: ^8.0.1
     copy-webpack-plugin: ^11.0.0
     css-loader: ^6.7.3
     dotenv: ^16.0.3
-    dotenv-webpack: ^8.0.1
     eslint: ^8.37.0
     html-webpack-plugin: ^5.5.0
     mini-css-extract-plugin: ^2.7.5
@@ -1539,6 +1537,7 @@ __metadata:
     "@config/postcss": "workspace:^1.0.0"
     "@config/tailwind": "workspace:^1.0.0"
     "@linter/eslint-config-tsx-prettier": "workspace:^1.0.0"
+    "@shared/auxiliaries": "workspace:^"
     "@shared/models": "workspace:^"
     "@shared/store": "workspace:^"
     "@shared/ui": "workspace:^0.1.0"
@@ -1786,6 +1785,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@config/tailwind@workspace:packages/@config/tailwind"
   dependencies:
+    "@assembly/webpack": "workspace:^1.0.0"
     "@linter/eslint-config-ts-prettier": "workspace:^1.0.0"
     concurrently: ^8.0.1
     eslint: ^8.37.0
@@ -2571,7 +2571,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shared/auxiliaries@workspace:^0.1.0, @shared/auxiliaries@workspace:packages/@shared/auxiliaries":
+"@shared/auxiliaries@workspace:^, @shared/auxiliaries@workspace:^0.1.0, @shared/auxiliaries@workspace:packages/@shared/auxiliaries":
   version: 0.0.0-use.local
   resolution: "@shared/auxiliaries@workspace:packages/@shared/auxiliaries"
   dependencies:
@@ -2602,13 +2602,13 @@ __metadata:
   resolution: "@shared/store@workspace:packages/@shared/store"
   dependencies:
     "@linter/eslint-config-ts-prettier": "workspace:^1.0.0"
+    "@shared/models": "workspace:^"
     concurrently: ^8.0.1
     eslint: ^8.37.0
     prettier: ^2.8.7
     rimraf: ^4.4.1
     typescript: ^5.0.3
   peerDependencies:
-    "@shared/models": "workspace:^"
     immer: ^9
     redux: ^4
     redux-saga: ^1
@@ -2879,17 +2879,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: fe81351470f2d3165e8b12ce33542eef89ea893e36dd62e8f7d72566dfb7e448376ae962f9f3ea888547ce8b55a40020ca0e01d637fab5d99567673084542641
-  languageName: node
-  linkType: hard
-
-"@types/dotenv-webpack@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "@types/dotenv-webpack@npm:7.0.3"
-  dependencies:
-    "@types/node": "*"
-    tapable: ^2.2.0
-    webpack: ^5
-  checksum: db5401515df936615447364da0ced0ffcc458f83ac1a4f5c52d9285b88471c5fd9272d9bef56a2514a9b47cef482636f8032c346d1a2605b77b3a55741a7be0b
   languageName: node
   linkType: hard
 
@@ -5170,37 +5159,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-defaults@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "dotenv-defaults@npm:2.0.2"
-  dependencies:
-    dotenv: ^8.2.0
-  checksum: c005960bd048e2189c4799e729c41f362e415e6e0b54313d3f31e853a84b049bf770b25cb21c112c2805bb13a8376edc9de451fb514abf8546392d327c27f6e5
-  languageName: node
-  linkType: hard
-
-"dotenv-webpack@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "dotenv-webpack@npm:8.0.1"
-  dependencies:
-    dotenv-defaults: ^2.0.2
-  peerDependencies:
-    webpack: ^4 || ^5
-  checksum: ee73eda78df90bcf7446763dfe5e518a2054ed6222783856912d2c6a255fdfc041854e125e036ff2603b06fb44f5234713fad5feecb1e66a54fe78a35a98fb87
-  languageName: node
-  linkType: hard
-
 "dotenv@npm:^16.0.3":
   version: 16.0.3
   resolution: "dotenv@npm:16.0.3"
   checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
-  languageName: node
-  linkType: hard
-
-"dotenv@npm:^8.2.0":
-  version: 8.6.0
-  resolution: "dotenv@npm:8.6.0"
-  checksum: 38e902c80b0666ab59e9310a3d24ed237029a7ce34d976796349765ac96b8d769f6df19090f1f471b77a25ca391971efde8a1ea63bb83111bd8bec8e5cc9b2cd
   languageName: node
   linkType: hard
 
@@ -11585,7 +11547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5, webpack@npm:^5.78.0":
+"webpack@npm:^5.78.0":
   version: 5.78.0
   resolution: "webpack@npm:5.78.0"
   dependencies:
