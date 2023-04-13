@@ -4,6 +4,8 @@ import { useLoaderData, useNavigate, redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { MessageSender, EncryptionUtils } from "@shared/models";
 import { cryptoActions } from "@shared/store";
+import { BorderedText, Heading, Panel, ThemedButton } from "@shared/ui";
+import ExtensionLayout from "../layouts/ExtensionLayout";
 
 import type { FC } from "react";
 import type { LoaderFunction } from "react-router-dom";
@@ -41,13 +43,25 @@ const SetupWizzard: FC & { loader: LoaderFunction } = () => {
     }, [navigate, secret]);
 
     return (
-        <div className="w-40">
-            <h1>New Secret</h1>
-            <div>
-                <span>{secret || data.secret}</span>
-            </div>
-            <button onClick={handleClick}>Proceed</button>
-        </div>
+        <ExtensionLayout>
+            <Panel
+                header={<Heading text="Secret Saver" />}
+                body={
+                    <BorderedText
+                        text={secret || data.secret}
+                        variant="secondary"
+                    />
+                }
+                footer={
+                    <ThemedButton
+                        text="Next"
+                        size="lg"
+                        className="mx-2"
+                        onClick={handleClick}
+                    />
+                }
+            />
+        </ExtensionLayout>
     );
 };
 
