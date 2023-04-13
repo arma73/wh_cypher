@@ -26,6 +26,6 @@ const routes: Array<RouteObject> = [
 ];
 
 export const router = createMemoryRouter(routes, {
-    initialEntries: ["/"],
-    initialIndex: 1,
+    initialEntries: ["/", "/setup", "/signin"],
+    initialIndex: 0,
 });
