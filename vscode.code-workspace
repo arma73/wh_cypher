@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "❕ root"
+    },
+    {
+      "path": "./extension/@browsers/chrome",
+      "name": "🕹 ext:chrome"
+    },
+    {
+      "path": "./packages/@shared/ui",
+      "name": "🧩 sd:ui"
+    },
+    {
+      "path": "./packages/@shared/store",
+      "name": "💾 sd:store"
+    },
+    {
+      "path": "./packages/@shared/models",
+      "name": "🛠 sd:models"
+    },
+    {
+      "path": "./packages/@shared/auxiliaries",
+      "name": "🦾 sd:auxs"
+    },
+    {
+      "path": "./packages/@config",
+      "name": "🧰 @config"
+    },
+    {
+      "path": "./packages/@assembly",
+      "name": "🤖 @assembly"
+    },
+    {
+      "path": "./packages/@linter",
+      "name": "🎗 @linter"
+    },
+  ]
+}
