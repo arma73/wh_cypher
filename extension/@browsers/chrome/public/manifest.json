@@ -1,6 +1,6 @@
 {
-  "name": "<name>",
-  "description": "<description>",
+  "name": "WH Cypher",
+  "description": "Chrome extension that authorizes the user and stores the user's secret encrypted in storage.",
   "version": "1.0.0",
   "manifest_version": 3,
   "action": {
