@@ -1,5 +1,5 @@
 import { createMemoryRouter } from "react-router-dom";
-import { Root, SetupWizzard } from "./screens";
+import { Root, SetupWizzard, SignIn } from "./screens";
 
 import type { RouteObject } from "react-router-dom";
 
@@ -13,6 +13,11 @@ const routes: Array<RouteObject> = [
         path: "/setup",
         element: <SetupWizzard />,
         loader: SetupWizzard.loader,
+    },
+    {
+        path: "/signin",
+        element: <SignIn />,
+        loader: SignIn.loader,
     },
 ];
 
