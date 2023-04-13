@@ -12,6 +12,7 @@ const routes: Array<RouteObject> = [
     {
         path: "/setup",
         element: <SetupWizzard />,
+        loader: SetupWizzard.loader,
     },
 ];
 
