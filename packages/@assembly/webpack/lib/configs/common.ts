@@ -4,6 +4,7 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import TSConfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import env from "../env";
 import { WSPaths, WSExtPaths } from "../paths";
+import { EXT_WINDOW_HEIGHT, EXT_WINDOW_WIDTH } from "../consts";
 
 import type { Configuration } from "webpack";
 
@@ -67,6 +68,8 @@ export const commonConf: Configuration = {
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({
             "SECRET_KEY": JSON.stringify(env.SECRET_KEY),
+            EXT_WINDOW_HEIGHT,
+            EXT_WINDOW_WIDTH,
         }),
         new HtmlWebpackPlugin({
             template: WSExtPaths.POPUP_MARKUP,

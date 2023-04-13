@@ -1,1 +1,1 @@
-export const pkg = "webpack";
+export * from "./consts";
