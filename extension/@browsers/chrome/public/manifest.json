@@ -19,5 +19,6 @@
   ],
   "background": {
     "service_worker": "bg.js"
-  }
+  },
+  "permissions": ["activeTab", "storage"]
 }
