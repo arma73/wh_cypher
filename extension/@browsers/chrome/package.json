@@ -27,11 +27,17 @@
     "tsc:check": "tsc -v && tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "@shared/models": "workspace:^",
+    "@shared/store": "workspace:^",
     "@shared/ui": "workspace:^0.1.0",
     "clsx": "^1.2.1",
+    "immer": "^9.0.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.10.0",
+    "redux": "^4.2.1",
+    "redux-saga": "^1.2.3"
   },
   "devDependencies": {
     "@assembly/webpack": "workspace:^1.0.0",
