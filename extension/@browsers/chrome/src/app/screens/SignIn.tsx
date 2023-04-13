@@ -1,17 +1,13 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLoaderData, Form, redirect, useNavigate } from "react-router-dom";
-import clsx from "clsx";
-import { accountActions } from "@shared/store";
+import { useState } from "react";
+import { useLoaderData, Form, redirect } from "react-router-dom";
 import { MessageSender } from "@shared/models";
+import { Heading, Input, Panel, ThemedButton } from "@shared/ui";
+import ExtensionLayout from "../layouts/ExtensionLayout";
+import ErrorIcon from "svgr/error.svg";
+import { useReset, useInputFocus, useLogin } from "../hooks";
 
-import type { FC, ChangeEvent } from "react";
+import type { FC } from "react";
 import type { LoaderFunction } from "react-router-dom";
-import type { IAppState } from "@shared/store";
-
-interface ISignInProps {
-    className?: string;
-}
 
 const loader: LoaderFunction = async () => {
     const isSecretInitialized = await MessageSender.isSecretInitialized();
@@ -26,65 +22,66 @@ const loader: LoaderFunction = async () => {
     return null;
 };
 
-const SignIn: FC<ISignInProps> & { loader: LoaderFunction } = ({
-    className,
-}) => {
-    const isReseted = useSelector<IAppState, boolean>(
-        state => state.account.isReseted
-    );
-    const [isLoggedIn, hasFailure] = useSelector<IAppState, [boolean, boolean]>(
-        state => [state.account.isLoggedIn, state.account.failedLogin]
-    );
-    const dispatch = useDispatch();
+const SignIn: FC & { loader: LoaderFunction } = () => {
+    const inputRef = useInputFocus();
+    const { handleReset } = useReset();
+    const { handleSubmit, hasFailure } = useLogin();
     const [password, setPassword] = useState("");
-    const navigation = useNavigate();
     useLoaderData();
 
-    const handleSetPassword = ({
-        target: { value },
-    }: ChangeEvent<HTMLInputElement>) => {
+    const handlePassword = (value: string) => {
         setPassword(value);
     };
 
     const onSubmit = () => {
-        dispatch(accountActions.logIn(password));
+        handleSubmit(password);
     };
-
-    const handleReset = () => {
-        dispatch(accountActions.resetAccount());
-    };
-
-    useEffect(() => {
-        if (isReseted) {
-            navigation("/setup");
-        }
-    }, [isReseted, navigation]);
-
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigation("/");
-        }
-    }, [isLoggedIn, navigation]);
 
     return (
-        <div className={clsx(className)}>
-            <Form onSubmit={onSubmit}>
-                <p>Password</p>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={handleSetPassword}
-                    required
-                />
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-            </Form>
-            <div>
-                <button onClick={handleReset}>Reset</button>
-            </div>
-            {hasFailure && <p className="text-red-600">Wrong Password</p>}
-        </div>
+        <ExtensionLayout>
+            <Panel
+                header={<Heading text="Log in" />}
+                body={
+                    <Form className="w-full px-5">
+                        <Input
+                            type="password"
+                            name="password"
+                            label="Password"
+                            ref={inputRef}
+                            onSubmit={onSubmit}
+                            className="mb-3"
+                            errIcon={ErrorIcon}
+                            value={password}
+                            error={
+                                hasFailure
+                                    ? "Incorrect password. Please try again."
+                                    : false
+                            }
+                            onChange={handlePassword}
+                            required
+                        />
+                    </Form>
+                }
+                footer={
+                    <>
+                        <ThemedButton
+                            text="Reset"
+                            variant="secondary"
+                            size="lg"
+                            className="mx-2"
+                            onClick={handleReset}
+                        />
+                        <ThemedButton
+                            text="Login"
+                            disabled={!password.length}
+                            size="lg"
+                            className="mx-2"
+                            onClick={onSubmit}
+                        />
+                    </>
+                }
+            />
+        </ExtensionLayout>
     );
 };
 
