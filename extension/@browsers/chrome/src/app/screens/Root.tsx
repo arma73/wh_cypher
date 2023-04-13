@@ -3,6 +3,8 @@ import { useLoaderData, redirect, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { accountActions, cryptoActions } from "@shared/store";
 import { MessageSender } from "@shared/models";
+import ExtensionLayout from "../layouts/ExtensionLayout";
+import { BorderedText, Heading, Panel, ThemedButton } from "@shared/ui";
 
 import type { FC } from "react";
 import type { LoaderFunction } from "react-router-dom";
@@ -28,9 +30,7 @@ const loader = async () => {
     };
 };
 
-interface IRootProps {}
-
-const Root: FC<IRootProps> & { loader: LoaderFunction } = () => {
+const Root: FC & { loader: LoaderFunction } = () => {
     const data = useLoaderData() as Awaited<ReturnType<typeof loader>>;
     const navigation = useNavigate();
     const secret = useSelector<IAppState, string | null>(
@@ -55,18 +55,34 @@ const Root: FC<IRootProps> & { loader: LoaderFunction } = () => {
     }, [data.secret, dispatch]);
 
     return (
-        <div id="main" className="view">
-            <h2>Secret</h2>
-            <p id="secret">{secret || data.secret}</p>
-            <div>
-                <button onClick={handleRegenerateSecret}>
-                    Regenerate Secret
-                </button>
-            </div>
-            <div>
-                <button onClick={handleLogOut}>Logout</button>
-            </div>
-        </div>
+        <ExtensionLayout>
+            <Panel
+                header={<Heading text="Secret" />}
+                body={
+                    <BorderedText
+                        text={secret || data.secret}
+                        variant="primary"
+                    />
+                }
+                footer={
+                    <>
+                        <ThemedButton
+                            text="Logout"
+                            variant="secondary"
+                            size="lg"
+                            className="mx-2"
+                            onClick={handleLogOut}
+                        />
+                        <ThemedButton
+                            text="Regenerate"
+                            size="lg"
+                            className="mx-2"
+                            onClick={handleRegenerateSecret}
+                        />
+                    </>
+                }
+            />
+        </ExtensionLayout>
     );
 };
 
