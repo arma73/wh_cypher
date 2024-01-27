@@ -13,7 +13,7 @@ yarn
 ### Build
 
 ```
-cp extension/@browsers/chrome/.env.example cp extension/@browsers/chrome/.env
+cp extension/@browsers/chrome/.env.example extension/@browsers/chrome/.env
 ```
 
 
